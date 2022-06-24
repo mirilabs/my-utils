@@ -1,3 +1,17 @@
+def coerce_length(base, length, pad_value = None):
+    """
+    Pads or truncates an iterable to a certain length.
+
+    Parameters:
+    base (iterable): The base object
+    length (int): The target length
+    pad_value (any): If `iter` is shorter than the target length, this value
+        will be used to fill the space
+
+    Returns:
+    (type(base)): The iterable with the correct length
+    """
+    return (base + [pad_value] * length)[:length]
 
 def batches(iterable, batch_size,
     exclude_last=False,
